@@ -1,0 +1,64 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000311}}
+.l-page {
+  margin: 0 auto; }
+  @media (min-width: 44em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000311}}
+    .l-page {
+      width: 44em; } }
+  @media (min-width: 70em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000311}}
+    .l-page {
+      width: 70em; } }
+  @media (coarse: point) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000311}}
+    .l-page {
+      background: red; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000324}}
+.l-main {
+  /* for IE 6/7 */
+  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  /* non-JS fallback */
+  *zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/singularitygs-1\.1\.2\/stylesheets\/singularitygs\/helpers\/_clearfix\.scss}line{font-family:\0000348}}
+  .l-main:before, .l-main:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/singularitygs-1\.1\.2\/stylesheets\/singularitygs\/helpers\/_clearfix\.scss}line{font-family:\0000355}}
+  .l-main:after {
+    clear: both; }
+
+@media (min-width: 44em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000329}}
+  .l-region--sidebar-first {
+    width: 23.40426%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000333}}
+  .l-content {
+    width: 74.46809%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0%;
+    clear: none; } }
+@media (min-width: 70em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000338}}
+  .l-region--sidebar-first {
+    width: 23.40426%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0%;
+    clear: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/sidebar\.layout\.scss}line{font-family:\0000342}}
+  .l-content {
+    width: 74.46809%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none; } }
