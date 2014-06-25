@@ -1,3 +1,7 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/cce-sidebar\.layout\.scss}line{font-family:\000034}}
+body {
+  background: yellow; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/layouts\/sidebar\/cce-sidebar\.layout\.scss}line{font-family:\000038}}
 .l-region--sidebar-first {
   background: #333; }

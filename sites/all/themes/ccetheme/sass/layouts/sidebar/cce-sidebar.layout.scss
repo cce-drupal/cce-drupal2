@@ -1,6 +1,10 @@
 @import "compass";
 @import "../../variables/**/*";
 
+body {
+		background: yellow;
+}
+
 .l-region--sidebar-first {
 		background: #333;
 }
