@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Custom Feeds feature.
+ */
+
+include_once 'custom_feeds.features.inc';
