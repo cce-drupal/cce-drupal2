@@ -1,0 +1,69 @@
+Index: FeedsHTTPFetcher.inc
+===================================================================
+diff --git a/plugins/FeedsHTTPFetcher.inc b/plugins/FeedsHTTPFetcher.inc
+--- a/plugins/FeedsHTTPFetcher.inc	(revision 12476)
++++ b/plugins/FeedsHTTPFetcher.inc	(working copy)
+@@ -25,6 +25,14 @@
+    * @var int
+    */
+   protected $timeout;
++  
++  /**
++   *
++   * Whether to ignore SSL validation errors and therefore accept invalid certificates
++   *
++   * @var bool
++   */
++  protected $accept_invalid_cert; 
+ 
+   /**
+    * Constructor.
+@@ -39,7 +47,7 @@
+   public function getRaw() {
+     if (!isset($this->raw)) {
+       feeds_include_library('http_request.inc', 'http_request');
+-      $result = http_request_get($this->url, NULL, NULL, NULL, $this->timeout);
++      $result = http_request_get($this->url, NULL, NULL, $this->accept_invalid_cert, $this->timeout);
+       if (!in_array($result->code, array(200, 201, 202, 203, 204, 205, 206))) {
+         throw new Exception(t('Download of @url failed with code !code.', array('@url' => $this->url, '!code' => $result->code)));
+       }
+@@ -56,6 +64,10 @@
+   public function setTimeout($timeout) {
+     $this->timeout = $timeout;
+   }
++  
++  public function setAcceptInvalidCert($accept_invalid_cert) {
++	$this->accept_invalid_cert = $accept_invalid_cert;
++  }
+ }
+ 
+ /**
+@@ -74,6 +86,7 @@
+     $fetcher_result = new FeedsHTTPFetcherResult($source_config['source']);
+     // When request_timeout is empty, the global value is used.
+     $fetcher_result->setTimeout($this->config['request_timeout']);
++	$fetcher_result->setAcceptInvalidCert($this->config['accept_invalid_cert']);
+     return $fetcher_result;
+   }
+ 
+@@ -123,6 +136,7 @@
+       'designated_hub' => '',
+       'request_timeout' => NULL,
+       'auto_scheme' => 'http',
++	  'accept_invalid_cert' => FALSE,
+     );
+   }
+ 
+@@ -176,6 +190,12 @@
+       '#maxlength' => 3,
+       '#size'=> 30,
+     );
++	$form['advanced']['accept_invalid_cert'] = array(
++	  '#type' => 'checkbox',
++	  '#title' => t('Accept invalid SSL certificates'),
++	  '#description' => t('<b>IMPORTANT:</b> This setting will force curl to completely ignore all SSL errors.  This is potentially a <b>major security risk</b> and should be used with caution.'),
++	  '#default_value' => $this->config['accept_invalid_cert'],
++	);
+ 
+     return $form;
+   }

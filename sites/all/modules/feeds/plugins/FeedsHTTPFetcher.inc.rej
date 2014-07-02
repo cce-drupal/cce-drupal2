@@ -1,0 +1,54 @@
+***************
+*** 28,34 ****
+    public function getRaw() {
+      if (!isset($this->raw)) {
+        feeds_include_library('http_request.inc', 'http_request');
+-       $result = http_request_get($this->url, NULL, NULL, NULL, $this->timeout);
+        if (!in_array($result->code, array(200, 201, 202, 203, 204, 205, 206))) {
+          throw new Exception(t('Download of @url failed with code !code.', array('@url' => $this->url, '!code' => $result->code)));
+        }
+--- 36,42 ----
+    public function getRaw() {
+      if (!isset($this->raw)) {
+        feeds_include_library('http_request.inc', 'http_request');
++       $result = http_request_get($this->url, NULL, NULL, $this->accept_invalid_cert, $this->timeout);
+        if (!in_array($result->code, array(200, 201, 202, 203, 204, 205, 206))) {
+          throw new Exception(t('Download of @url failed with code !code.', array('@url' => $this->url, '!code' => $result->code)));
+        }
+***************
+*** 112,117 ****
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+        'auto_scheme' => 'http',
+      );
+    }
+  
+--- 125,131 ----
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+        'auto_scheme' => 'http',
++ 	  'accept_invalid_cert' => FALSE,
+      );
+    }
+  
+***************
+*** 165,170 ****
+        '#maxlength' => 3,
+        '#size'=> 30,
+      );
+  
+      return $form;
+    }
+--- 179,190 ----
+        '#maxlength' => 3,
+        '#size'=> 30,
+      );
++ 	$form['advanced']['accept_invalid_cert'] = array(
++ 	  '#type' => 'checkbox',
++ 	  '#title' => t('Accept invalid SSL certificates'),
++ 	  '#description' => t('<b>IMPORTANT:</b> This setting will force curl to completely ignore all SSL errors.  This is potentially a <b>major security risk</b> and should be used with caution.'),
++ 	  '#default_value' => $this->config['accept_invalid_cert'],
++ 	);
+  
+      return $form;
+    }
