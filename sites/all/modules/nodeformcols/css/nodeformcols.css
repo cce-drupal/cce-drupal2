@@ -16,3 +16,4 @@
 .node-form .form-region-right text-area {
   max-width: 100%;
 }
+ div#edit-actions { text-align: right; }
