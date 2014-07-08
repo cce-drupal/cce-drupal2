@@ -9,7 +9,7 @@
 }
 
 .node-form-has-region-right .form-region-footer {
-  clear: both;
+  clear: both; padding-top: 10px; 
 }
 
 .node-form .form-region-right input,
