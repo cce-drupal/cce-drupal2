@@ -7,8 +7,28 @@
 @import "../../variables/**/*";
 
 
+.l-region--navigation {
+		background: maroon;
+}
+
+
+.l-branding {
+		background: blue;
+		margin:0 auto;
+		@include breakpoint($tab, true) {
+			width: $tab;
+		}
+		@include breakpoint($desk, true) {
+			width: $desk;
+		}
+		@include breakpoint($touch) {
+			background: pink;
+		}
+}
+
 
 .l-page {
+		@include background-grid;
 		margin:0 auto;
 		@include breakpoint($tab, true) {
 			width: $tab;
@@ -23,23 +43,47 @@
 
 .l-main {
 		@include clearfix;
+
 }
 
 @include breakpoint($tab, true) {
 	.l-region--sidebar-first {
-		@include grid-span(3,10);
+		background: purple;
+		// Tablet: Span 3 columns, starting at the 10th column
+		@include grid-span(4,9);
+		// Sets padding equal to a gutter.
+  		padding-left: gutter-span(0.5);
 	}
 
 	.l-content {
-		@include grid-span(9,1);
+		background: lime;
+		// Tablet: Span 8 columns, starting at the 1st column
+		@include grid-span(8,1);
+		// Sets padding equal to a gutter.
+  		padding-left: gutter-span(0.5);
 	}
 }
 @include breakpoint($desk, true) {
 	.l-region--sidebar-first {
-		@include grid-span(3,1);
+		background: orange;
+		// Desktop: Span 4 columns, starting at the 9th column
+		@include grid-span(4,9);
+		// Sets padding equal to a gutter.
+  		padding-left: gutter-span(0.5);
 	}
 
 	.l-content {
-		@include grid-span(9,4);
+		background: yellow;
+		// Desktop: Span 8 columns, starting at the 1st column
+		@include grid-span(8,1);
+		  // Sets padding equal to a gutter.
+  		padding-left: gutter-span(0.5);
+
 	}
+}
+
+.l-region--footer {
+		background: maroon;
+		// Sets padding equal to a gutter.
+  		padding-left: gutter-span(0.5);
 }
