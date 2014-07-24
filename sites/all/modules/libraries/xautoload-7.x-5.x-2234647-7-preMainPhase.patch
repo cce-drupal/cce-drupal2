@@ -1,0 +1,209 @@
+diff --git a/src/Phases/DrupalPhaseControl.php b/src/Phases/DrupalPhaseControl.php
+index 40bc209..1935517 100644
+--- a/src/Phases/DrupalPhaseControl.php
++++ b/src/Phases/DrupalPhaseControl.php
+@@ -36,15 +36,21 @@ class DrupalPhaseControl implements CacheMissObserverInterface {
+ 
+   /**
+    * @var bool
+-   *   TRUE, if in main phase.
++   *   TRUE, if in of after boot phase.
+    */
+-  private $mainPhase = FALSE;
++  private $bootPhase;
+ 
+   /**
+    * @var bool
+-   *   TRUE, if in of after boot phase.
++   *   TRUE, if in pre-main phase or main phase.
+    */
+-  private $bootPhase;
++  private $preMainPhase = FALSE;
++
++  /**
++   * @var bool
++   *   TRUE, if in main phase.
++   */
++  private $mainPhase;
+ 
+   /**
+    * @param DrupalSystemInterface $system
+@@ -70,10 +76,10 @@ class DrupalPhaseControl implements CacheMissObserverInterface {
+         $observer->enterBootPhase();
+       }
+     }
+-    if ($this->mainPhase) {
++    if ($this->preMainPhase) {
+       // We slipped into main phase while asleep. Need to catch up.
+       foreach ($this->observers as $observer) {
+-        $observer->enterMainPhase();
++        $observer->enterPreMainPhase();
+       }
+     }
+   }
+@@ -99,11 +105,34 @@ class DrupalPhaseControl implements CacheMissObserverInterface {
+    *
+    * Called from
+    * @see xautoload_custom_theme()
+-   * @see xautolaod_init()
+    */
+-  public function enterMainPhase() {
++  public function enterPreMainPhase() {
+     // Main phase implies boot phase.
+     $this->enterBootPhase();
++    if ($this->preMainPhase) {
++      // We are already in the main phase. Nothing changes.
++      return;
++    }
++    $this->preMainPhase = TRUE;
++    if (!$this->awake) {
++      // The entire thing is not initialized yet.
++      // Postpone until operateOnFinder()
++      return;
++    }
++    foreach ($this->observers as $observer) {
++      $observer->enterPreMainPhase();
++    }
++  }
++
++  /**
++   * Initiate the main phase.
++   *
++   * Called from
++   * @see xautoload_init()
++   */
++  public function enterMainPhase() {
++    // Main phase implies boot phase.
++    $this->enterPreMainPhase();
+     if ($this->mainPhase) {
+       // We are already in the main phase. Nothing changes.
+       return;
+@@ -143,7 +172,7 @@ class DrupalPhaseControl implements CacheMissObserverInterface {
+         if ('xautoload' === $name) {
+           // If xautoload is enabled in this request, then boot phase and main
+           // phase are not properly initialized yet.
+-          $this->enterMainPhase();
++          $this->enterPreMainPhase();
+         }
+         // Notify observers about the new extension.
+         foreach ($this->observers as $observer) {
+diff --git a/src/Phases/ExtensionNamespaces.php b/src/Phases/ExtensionNamespaces.php
+index a9a4a18..f9dd1d5 100644
+--- a/src/Phases/ExtensionNamespaces.php
++++ b/src/Phases/ExtensionNamespaces.php
+@@ -144,6 +144,13 @@ class ExtensionNamespaces implements PhaseObserverInterface {
+   /**
+    * Enter the main phase of the request, where all module files are included.
+    */
++  public function enterPreMainPhase() {
++    // Nothing.
++  }
++
++  /**
++   * Enter the main phase of the request, where hook_init() fires.
++   */
+   public function enterMainPhase() {
+     // Nothing.
+   }
+diff --git a/src/Phases/HookXautoload.php b/src/Phases/HookXautoload.php
+index 5d9333c..5d78b0d 100644
+--- a/src/Phases/HookXautoload.php
++++ b/src/Phases/HookXautoload.php
+@@ -64,12 +64,19 @@ class HookXautoload implements PhaseObserverInterface {
+   /**
+    * Enter the main phase of the request, where all module files are included.
+    */
+-  public function enterMainPhase() {
++  public function enterPreMainPhase() {
+     $modules = $this->system->moduleImplements('xautoload');
+     $this->runHookXautoload($modules);
+   }
+ 
+   /**
++   * Enter the main phase of the request, where hook_init() fires.
++   */
++  public function enterMainPhase() {
++    // Nothing.
++  }
++
++  /**
+    * New extensions were enabled/installed.
+    *
+    * @param string $name
+diff --git a/src/Phases/HookXautoloadEarly.php b/src/Phases/HookXautoloadEarly.php
+index 1306cfb..6f05b86 100644
+--- a/src/Phases/HookXautoloadEarly.php
++++ b/src/Phases/HookXautoloadEarly.php
+@@ -57,7 +57,7 @@ class HookXautoloadEarly implements PhaseObserverInterface {
+   /**
+    * Enter the main phase of the request, where all module files are included.
+    */
+-  public function enterMainPhase() {
++  public function enterPreMainPhase() {
+     // @todo Don't use moduleImplements(), to prevent hook_module_implements_alter()
+     $modules = $this->system->moduleImplements('xautoload');
+     // @todo Remove boot modules from the list.
+@@ -65,6 +65,13 @@ class HookXautoloadEarly implements PhaseObserverInterface {
+   }
+ 
+   /**
++   * Enter the main phase of the request, where hook_init() fires.
++   */
++  public function enterMainPhase() {
++    // Nothing.
++  }
++
++  /**
+    * New extensions were enabled/installed.
+    *
+    * @param string $name
+diff --git a/src/Phases/LibrariesIntegration.php b/src/Phases/LibrariesIntegration.php
+index 7a289e1..3490e28 100644
+--- a/src/Phases/LibrariesIntegration.php
++++ b/src/Phases/LibrariesIntegration.php
+@@ -47,6 +47,13 @@ class LibrariesIntegration implements PhaseObserverInterface {
+   /**
+    * Enter the main phase of the request, where all module files are included.
+    */
++  public function enterPreMainPhase() {
++    // Nothing.
++  }
++
++  /**
++   * Enter the main phase of the request, where hook_init() fires.
++   */
+   public function enterMainPhase() {
+     $this->initLibrariesIntegration();
+   }
+diff --git a/src/Phases/PhaseObserverInterface.php b/src/Phases/PhaseObserverInterface.php
+index 976fc5b..02a601f 100644
+--- a/src/Phases/PhaseObserverInterface.php
++++ b/src/Phases/PhaseObserverInterface.php
+@@ -41,7 +41,13 @@ interface PhaseObserverInterface {
+   public function enterBootPhase();
+ 
+   /**
+-   * Enter the main phase of the request, where all module files are included.
++   * Enter the pre-main phase of the request, where all module files are
++   * included and hook_custom_theme() fires.
++   */
++  public function enterPreMainPhase();
++
++  /**
++   * Enter the main phase of the request, where hook_init() fires.
+    */
+   public function enterMainPhase();
+ 
+diff --git a/xautoload.module b/xautoload.module
+index 829a831..3fa843e 100644
+--- a/xautoload.module
++++ b/xautoload.module
+@@ -31,7 +31,7 @@ function xautoload_boot() {}
+  * We only do this because that's the first hook to fire after bootstrap.
+  */
+ function xautoload_custom_theme() {
+-  xautoload()->phaseControl->enterMainPhase();
++  xautoload()->phaseControl->enterPreMainPhase();
+ }
+ 
+ /**
