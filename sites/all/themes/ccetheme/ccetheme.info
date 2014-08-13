@@ -25,6 +25,7 @@ scripts[] = js/grid.min.js
 ; ========================================
 regions[branding] = Branding
 regions[header] = Header
+regions[hero] = Hero
 regions[navigation] = Navigation
 regions[highlighted] = Highlighted
 regions[help] = Help

@@ -4,12 +4,14 @@ template = sidebar-layout
 
 ; Regions
 regions[branding] = Branding
+regions[navigation] = Navigation Bar
 regions[header] = Header
-regions[navigation] = Navigation
+regions[hero] = Hero
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[content] = Content
 regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
 regions[footer] = Footer 
 
 ; Styles
