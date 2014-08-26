@@ -7,7 +7,7 @@
 $api = '2.0.0';
 
 $data = (object) array(
-  'vid' => '6',
+  'vid' => '4',
   'name' => 'Program Areas With Emphases',
   'machine_name' => 'program_areas_with_emphases',
   'description' => '',

@@ -29,9 +29,9 @@ $dependencies = array(
 
 $optional = array(
   'field.node.body.pwt' => 'field.node.body.pwt',
-  'field.node.field_url.pwt' => 'field.node.field_url.pwt',
-  'field.node.field_pubdate.pwt' => 'field.node.field_pubdate.pwt',
   'field.node.field_program_area.pwt' => 'field.node.field_program_area.pwt',
+  'field.node.field_pubdate.pwt' => 'field.node.field_pubdate.pwt',
+  'field.node.field_url.pwt' => 'field.node.field_url.pwt',
   'permission.create_pwt_content' => 'permission.create_pwt_content',
   'permission.edit_own_pwt_content' => 'permission.edit_own_pwt_content',
   'permission.edit_any_pwt_content' => 'permission.edit_any_pwt_content',

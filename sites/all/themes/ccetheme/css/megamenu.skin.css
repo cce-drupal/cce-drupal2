@@ -1,0 +1,38 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\000031}}
+.megamenu-skin-cce {
+  background-color: white; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\000035}}
+.megamenu-skin-cce a:hover {
+  text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\000038}}
+  .megamenu-skin-cce a:hover .megamenu-skin-cce .megamenu-title {
+    font-size: 100%;
+    font-weight: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\0000312}}
+  .megamenu-skin-cce a:hover .megamenu-skin-cce .megamenu-bin {
+    background-color: #EEEEEE;
+    border: 2px groove #7E7E7E;
+    border-bottom-left-radius: 0.583em;
+    border-bottom-right-radius: 0.583em;
+    border-top-left-radius: 0.583em;
+    border-top-right-radius: 0.583em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\0000320}}
+  .megamenu-skin-cce a:hover .megamenu-skin-cce .megamenu-slot {
+    border-bottom-color: #00ff09;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-right: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\0000326}}
+  .megamenu-skin-cce a:hover .megamenu-skin-cce .megamenu-slot-title, .megamenu-skin-cce a:hover .megamenu-skin-cce .megamenu-slot-title a {
+    background-color: #BBBBBB;
+    color: #FFFFFF;
+    font-size: 100%;
+    text-align: center;
+    text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\0000333}}
+  .megamenu-skin-cce a:hover .megamenu-skin-cce .megamenu-link {
+    font-size: 85%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjp\/Sites\/devdesktop\/acquia-drupal-7\.27\.32\.6106\/sites\/all\/themes\/ccetheme\/sass\/megamenu\.skin\.scss}line{font-family:\0000336}}
+    .megamenu-skin-cce a:hover .megamenu-skin-cce .megamenu-link .megamenu-skin-cce .megamenu-items {
+      float: right; }

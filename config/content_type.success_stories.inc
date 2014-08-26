@@ -29,10 +29,10 @@ $dependencies = array(
 
 $optional = array(
   'field.node.body.success_stories' => 'field.node.body.success_stories',
-  'field.node.field_county.success_stories' => 'field.node.field_county.success_stories',
   'field.node.field_authornameemail.success_stories' => 'field.node.field_authornameemail.success_stories',
-  'field.node.field_pubdate.success_stories' => 'field.node.field_pubdate.success_stories',
+  'field.node.field_county.success_stories' => 'field.node.field_county.success_stories',
   'field.node.field_program_area.success_stories' => 'field.node.field_program_area.success_stories',
+  'field.node.field_pubdate.success_stories' => 'field.node.field_pubdate.success_stories',
   'permission.create_success_stories_content' => 'permission.create_success_stories_content',
   'permission.edit_own_success_stories_content' => 'permission.edit_own_success_stories_content',
   'permission.edit_any_success_stories_content' => 'permission.edit_any_success_stories_content',

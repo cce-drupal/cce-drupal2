@@ -29,11 +29,11 @@ $dependencies = array(
 
 $optional = array(
   'field.node.body.local_programs' => 'field.node.body.local_programs',
-  'field.node.field_url.local_programs' => 'field.node.field_url.local_programs',
-  'field.node.field_pubdate.local_programs' => 'field.node.field_pubdate.local_programs',
   'field.node.field_authornameemail.local_programs' => 'field.node.field_authornameemail.local_programs',
   'field.node.field_county.local_programs' => 'field.node.field_county.local_programs',
   'field.node.field_program_area.local_programs' => 'field.node.field_program_area.local_programs',
+  'field.node.field_pubdate.local_programs' => 'field.node.field_pubdate.local_programs',
+  'field.node.field_url.local_programs' => 'field.node.field_url.local_programs',
   'permission.create_local_programs_content' => 'permission.create_local_programs_content',
   'permission.edit_own_local_programs_content' => 'permission.edit_own_local_programs_content',
   'permission.edit_any_local_programs_content' => 'permission.edit_any_local_programs_content',

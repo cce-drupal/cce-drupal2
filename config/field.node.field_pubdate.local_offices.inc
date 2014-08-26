@@ -71,7 +71,7 @@ $data = array(
     'label' => 'PubDate',
     'widget' => array(
       'weight' => '3',
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'module' => 'date',
       'active' => 1,
       'settings' => array(
@@ -118,6 +118,7 @@ $data = array(
     'entity_type' => 'node',
     'bundle' => 'local_offices',
     'deleted' => '0',
+    'default_value' => NULL,
   ),
 );
 

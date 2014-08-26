@@ -8,9 +8,7 @@ $api = '2.0.0';
 
 $data = array(
   'permission' => 'edit any success_stories content',
-  'roles' => array(
-    0 => 'feeds',
-  ),
+  'roles' => array(),
 );
 
 $dependencies = array(

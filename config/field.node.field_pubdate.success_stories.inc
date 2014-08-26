@@ -71,7 +71,7 @@ $data = array(
     'label' => 'PubDate',
     'widget' => array(
       'weight' => '5',
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'module' => 'date',
       'active' => 1,
       'settings' => array(
@@ -119,6 +119,7 @@ $data = array(
     'entity_type' => 'node',
     'bundle' => 'success_stories',
     'deleted' => '0',
+    'default_value' => NULL,
   ),
 );
 

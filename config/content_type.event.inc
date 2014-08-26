@@ -29,11 +29,11 @@ $dependencies = array(
 
 $optional = array(
   'field.node.body.event' => 'field.node.body.event',
-  'field.node.field_location.event' => 'field.node.field_location.event',
-  'field.node.field_url.event' => 'field.node.field_url.event',
-  'field.node.field_startdate.event' => 'field.node.field_startdate.event',
   'field.node.field_county.event' => 'field.node.field_county.event',
+  'field.node.field_location.event' => 'field.node.field_location.event',
   'field.node.field_program_area.event' => 'field.node.field_program_area.event',
+  'field.node.field_startdate.event' => 'field.node.field_startdate.event',
+  'field.node.field_url.event' => 'field.node.field_url.event',
   'permission.create_event_content' => 'permission.create_event_content',
   'permission.edit_own_event_content' => 'permission.edit_own_event_content',
   'permission.edit_any_event_content' => 'permission.edit_any_event_content',

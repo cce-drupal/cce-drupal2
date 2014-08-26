@@ -1,5 +1,4 @@
 $breakpoint-no-queries: true;
 $breakpoint-no-qurery-fallbacks: true;
 
-// Re import everything from sidebar.layout.scss but without media queries.
 @import "sidebar.layout";

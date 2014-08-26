@@ -29,9 +29,9 @@ $dependencies = array(
 
 $optional = array(
   'field.node.body.del' => 'field.node.body.del',
-  'field.node.field_url.del' => 'field.node.field_url.del',
-  'field.node.field_pubdate.del' => 'field.node.field_pubdate.del',
   'field.node.field_authornameemail.del' => 'field.node.field_authornameemail.del',
+  'field.node.field_pubdate.del' => 'field.node.field_pubdate.del',
+  'field.node.field_url.del' => 'field.node.field_url.del',
   'permission.create_del_content' => 'permission.create_del_content',
   'permission.edit_own_del_content' => 'permission.edit_own_del_content',
   'permission.edit_any_del_content' => 'permission.edit_any_del_content',

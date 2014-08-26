@@ -8,9 +8,7 @@ $api = '2.0.0';
 
 $data = array(
   'permission' => 'delete own event content',
-  'roles' => array(
-    0 => 'feeds',
-  ),
+  'roles' => array(),
 );
 
 $dependencies = array(
