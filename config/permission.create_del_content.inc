@@ -8,7 +8,9 @@ $api = '2.0.0';
 
 $data = array(
   'permission' => 'create del content',
-  'roles' => array(),
+  'roles' => array(
+    0 => 'feeds',
+  ),
 );
 
 $dependencies = array(

@@ -222,7 +222,7 @@ $tracked = array (
   'feeds_tamper.google_alert_3-url-end_of_string3' => 'dc65b2c75ee11a70e4e0c95dbc4c10c950025591',
   'feeds_tamper.google_alert_3-url-find_replace_regex' => '59637d086dfc341351c1f57c371ca0d6e48c9192',
   'views_view.administer_content' => '9c78176dde6ffc4457b3a684ee345e00cf0343bf',
-  'views_view.hero_slideshow' => '112c07cbb6988d45a4f62c1725bf7c1afd2fa1c4',
+  'views_view.hero_slideshow' => 'ff74ea457c37a6d91b94725e3fe0502071fe9288',
   'views_view.news_blocks' => 'f801fe9b205f27f095be35f1739983fc0f5f8912',
 );
 

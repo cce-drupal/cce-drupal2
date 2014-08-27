@@ -83,7 +83,7 @@ $data = array(
     'label' => 'StartDate',
     'widget' => array(
       'weight' => '3',
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'module' => 'date',
       'active' => 1,
       'settings' => array(
@@ -131,7 +131,6 @@ $data = array(
     'entity_type' => 'node',
     'bundle' => 'event',
     'deleted' => '0',
-    'default_value' => NULL,
   ),
 );
 

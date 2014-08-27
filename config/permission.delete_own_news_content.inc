@@ -8,7 +8,9 @@ $api = '2.0.0';
 
 $data = array(
   'permission' => 'delete own news content',
-  'roles' => array(),
+  'roles' => array(
+    0 => 'feeds',
+  ),
 );
 
 $dependencies = array(

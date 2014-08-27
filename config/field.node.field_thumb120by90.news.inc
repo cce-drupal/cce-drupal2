@@ -102,7 +102,7 @@ $data = array(
       'active' => 1,
       'settings' => array(
         'progress_indicator' => 'throbber',
-        'preview_image_style' => '',
+        'preview_image_style' => 'thumbnail__120_x_90_',
       ),
     ),
     'settings' => array(
