@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the CCE Feeds feature.
- */
-
-include_once 'cce_feeds.features.inc';
